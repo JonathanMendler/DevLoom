@@ -15,6 +15,8 @@ export function Content() {
   // ];
 
   const [posts, setPosts] = useState([]);
+  const [isPostsShowVisible, setIsPostsShowVisible] = useState(false);
+  const [currentPost, setCurrentPost] = useState([]);
 
   const handleIndexPosts = () => {
     console.log("handleIndexPosts");
@@ -24,12 +26,23 @@ export function Content() {
     });
   };
 
+  const handleShowPost = (post) => {
+    console.log("handleShowPost", post);
+    setIsPostsShowVisible(true);
+    setCurrentPost(post);
+  };
+
+  const handleClose = () => {
+    console.log("handleClose");
+    setIsPostsShowVisible(false);
+  };
+
   useEffect(handleIndexPosts, []);
 
   return (
     <div>
-      <PostsIndex posts={posts} />
-      <Modal show={true}>
+      <PostsIndex posts={posts} onShowPost={handleShowPost} />
+      <Modal show={isPostsShowVisible} onClose={handleClose}>
         <h1>Test</h1>
       </Modal>
     </div>
