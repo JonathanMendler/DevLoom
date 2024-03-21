@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { PostsIndex } from "./PostsIndex";
 import { PostsShow } from "./PostsShow";
+import { PostsNew } from "./PostsNew";
 import { Modal } from "./Modal";
 
 export function Content() {
@@ -27,6 +28,14 @@ export function Content() {
     });
   };
 
+  const handleCreatePost = (params, successCallback) => {
+    console.log("handleCreatePost", params);
+    axios.post("http://localhost:3000/posts.json", params).then((response) => {
+      setPosts([...posts, response.data]);
+      successCallback();
+    });
+  };
+
   const handleShowPost = (post) => {
     console.log("handleShowPost", post);
     setIsPostsShowVisible(true);
@@ -42,6 +51,7 @@ export function Content() {
 
   return (
     <div>
+      <PostsNew onCreatePost={handleCreatePost} />
       <PostsIndex posts={posts} onShowPost={handleShowPost} />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
         <PostsShow post={currentPost} />
