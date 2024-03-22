@@ -5,6 +5,7 @@ import { PostsShow } from "./PostsShow";
 import { PostsNew } from "./PostsNew";
 import { Modal } from "./Modal";
 import { Signup } from "./Signup";
+import { Login } from "./Login";
 
 export function Content() {
   // const posts = [
