@@ -33,7 +33,7 @@ export function Login() {
       <h1>Login</h1>
       <ul>
         {errors.map((error) => (
-          <li key={error}>(error</li>
+          <li key={error}>{error}</li>
         ))}
       </ul>
       <form onSubmit={handleSubmit}>
