@@ -9,7 +9,7 @@ export function Signup() {
     setErrors([]);
     const params = new FormData(event.target);
     axios
-      .post("http://localhost:3000/users.json", params)
+      .post("https://devloom-be.fly.dev", params)
       .then((response) => {
         console.log(response.data);
         event.target.reset();
