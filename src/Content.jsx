@@ -25,7 +25,7 @@ export function Content() {
 
   const handleIndexPosts = () => {
     console.log("handleIndexPosts");
-    axios.get("http://localhost:3000/posts.json").then((response) => {
+    axios.get("https://devloom-be.fly.dev/posts.json").then((response) => {
       console.log(response.data);
       setPosts(response.data);
     });
@@ -33,7 +33,7 @@ export function Content() {
 
   const handleCreatePost = (params, successCallback) => {
     console.log("handleCreatePost", params);
-    axios.post("http://localhost:3000/posts.json", params).then((response) => {
+    axios.post("https://devloom-be.fly.dev/posts.json", params).then((response) => {
       setPosts([...posts, response.data]);
       successCallback();
     });
@@ -47,7 +47,7 @@ export function Content() {
 
   const handleUpdatePost = (id, params, successCallback) => {
     console.log("handleUpdatePost", params);
-    axios.patch(`http://localhost:3000/posts/${id}.json`, params).then((response) => {
+    axios.patch(`https://devloom-be.fly.dev/posts/${id}.json`, params).then((response) => {
       setPosts(
         posts.map((post) => {
           if (post.id === response.data.id) {
@@ -64,7 +64,7 @@ export function Content() {
 
   const handleDestroyPost = (post) => {
     console.log("handleDestroyPost", post);
-    axios.delete(`http://localhost:3000/posts/${post.id}.json`).then((response) => {
+    axios.delete(`https://devloom-be.fly.dev/posts/${post.id}.json`).then((response) => {
       setPosts(posts.filter((p) => p.id !== post.id));
       handleClose();
     });
