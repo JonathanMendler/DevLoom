@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-// import { Modal } from "./Modal";
-// import { Signup } from "./Signup";
-// import { Login } from "./Login";
+import { Modal } from "./Modal";
+import { Signup } from "./Signup";
+import { Login } from "./Login";
 // import { LogoutLink } from "./LogoutLink";
 
 const navigation = [
@@ -13,32 +13,32 @@ const navigation = [
   { name: "Company", href: "#" },
 ];
 
-// const [isSignupVisible, setIsSignupVisible] = useState(false);
-// const [isLoginVisible, setIsLoginVisible] = useState(false);
-// const [setIsLogoutVisible] = useState(false);
-
-// const handleSignupShow = () => {
-//   setIsSignupVisible(true);
-// };
-
-// const handleSignupHide = () => {
-//   setIsSignupVisible(false);
-// };
-
-// const handleLoginShow = () => {
-//   setIsLoginVisible(true);
-// };
-
-// const handleLoginHide = () => {
-//   setIsLoginVisible(false);
-// };
-
-// const handleLogoutShow = () => {
-//   setIsLogoutVisible(true);
-// };
-
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const [isSignupVisible, setIsSignupVisible] = useState(false);
+  const [isLoginVisible, setIsLoginVisible] = useState(false);
+  const [setIsLogoutVisible] = useState(false);
+
+  const handleSignupShow = () => {
+    setIsSignupVisible(true);
+  };
+
+  const handleSignupHide = () => {
+    setIsSignupVisible(false);
+  };
+
+  const handleLoginShow = () => {
+    setIsLoginVisible(true);
+  };
+
+  const handleLoginHide = () => {
+    setIsLoginVisible(false);
+  };
+
+  const handleLogoutShow = () => {
+    setIsLogoutVisible(true);
+  };
 
   return (
     <header className="bg-white">
@@ -63,10 +63,19 @@ export function Header() {
               {item.name}
             </a>
           ))}
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Log in <span aria-hidden="true">&rarr;</span>
+          <a className="text-sm font-semibold leading-6 text-gray-900" onClick={handleSignupShow}>
+            Signup <span aria-hidden="true"></span>
+          </a>
+          <a className="text-sm font-semibold leading-6 text-gray-900" onClick={handleLoginShow}>
+            Login <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
+        <Modal show={isSignupVisible} onClose={handleSignupHide}>
+          <Signup />
+        </Modal>
+        <Modal show={isLoginVisible} onClose={handleLoginHide}>
+          <Login />
+        </Modal>
       </nav>
       <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
         <div className="fixed inset-0 z-10" />
