@@ -7,10 +7,10 @@ import { Login } from "./Login";
 // import { LogoutLink } from "./LogoutLink";
 
 const navigation = [
-  { name: "Product", href: "#" },
+  { name: "Home", href: "#" },
   { name: "Features", href: "#" },
   { name: "Marketplace", href: "#" },
-  { name: "Company", href: "#" },
+  { name: "Signup", href: "./Signup.jsx" },
 ];
 
 export function Header() {
@@ -109,7 +109,7 @@ export function Header() {
               </div>
               <div className="py-6">
                 <a
-                  href="#"
+                  href="./Login.jsx"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Log in

@@ -9,7 +9,7 @@ export function Signup() {
     setErrors([]);
     const params = new FormData(event.target);
     axios
-      .post("https://devloom-be.fly.dev/users.json", params)
+      .post("https://obscure-tor-85828-6937fb9ee34d.herokuapp.com//users.json", params)
       .then((response) => {
         console.log(response.data);
         event.target.reset();

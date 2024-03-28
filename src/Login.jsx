@@ -14,7 +14,7 @@ export function Login() {
     setErrors([]);
     const params = new FormData(event.target);
     axios
-      .post("https://devloom-be.fly.dev/sessions.json", params)
+      .post("https://obscure-tor-85828-6937fb9ee34d.herokuapp.com//sessions.json", params)
       .then((response) => {
         console.log(response.data);
         axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
