@@ -9,8 +9,6 @@ import { Login } from "./Login";
 const navigation = [
   { name: "Home", href: "#" },
   { name: "Features", href: "#" },
-  { name: "Marketplace", href: "#" },
-  { name: "Signup", href: "./Signup.jsx" },
 ];
 
 export function Header() {
