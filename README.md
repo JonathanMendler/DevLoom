@@ -7,10 +7,10 @@ Welcome to DevLoom, a blogging platform built upon Ruby on Rails, PostgreSQL, No
 + **Vite:** v5.1.6
 - **Tailwind:** v3.4.1
 
-##Project Status
+## Project Status
 This project is currently in development. Users can create and read blog posts. Signup and Login are in progress. User ability to Update and Delete posts to be implemented upon authentication. 
 
-##Project Screen Shot
+## Project Screen Shot
 <img width="30px" src="https://imgur.com/a/gdgQHwa" alt="DevLoom jpeg" />
 
 ## Installation and Setup
